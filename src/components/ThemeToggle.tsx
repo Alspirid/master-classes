@@ -4,8 +4,6 @@ import { useTheme } from "../hooks/useTheme";
 const ThemeToggle: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
 
-  console.log("theme", theme);
-
   return (
     <button
       onClick={toggleTheme}

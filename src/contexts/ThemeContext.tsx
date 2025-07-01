@@ -1,6 +1,6 @@
-import React, { useEffect, useState, type ReactNode } from "react";
-import type { Theme } from "./theme";
-import { ThemeContext } from "./theme";
+import React, { type ReactNode, useEffect, useState } from "react";
+import { type Theme, ThemeContext } from "./theme";
+
 interface ThemeProviderProps {
   children: ReactNode;
 }
@@ -11,7 +11,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   useEffect(() => {
     // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem("theme") as Theme;
-    if (savedTheme) {
+
+    if (savedTheme && (savedTheme === "light" || savedTheme === "dark")) {
       setTheme(savedTheme);
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setTheme("dark");

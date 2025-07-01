@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import MainContent from "./components/MainContent";
+import Sidebar from "./components/Sidebar";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import { mockMasterClasses } from "./data/mockData";
+import type { Video } from "./types";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
+
+  const handleVideoSelect = (video: Video) => {
+    setSelectedVideo(video);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ThemeProvider>
+      <div className="flex h-screen bg-gray-100 dark:bg-gray-900">
+        <Sidebar
+          masterClasses={mockMasterClasses}
+          onVideoSelect={handleVideoSelect}
+          selectedVideoId={selectedVideo?.id}
+        />
+        <MainContent selectedVideo={selectedVideo} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;

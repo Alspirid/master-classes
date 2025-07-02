@@ -1,7 +1,7 @@
-import React from "react";
-import type { MasterClass, Video } from "../types";
-import Accordion from "./Accordion";
-import ThemeToggle from "./ThemeToggle";
+import React from 'react';
+import type { MasterClass, Video } from '../types';
+import Accordion from './Accordion';
+import ThemeToggle from './ThemeToggle';
 
 interface SidebarProps {
   masterClasses: MasterClass[];
@@ -15,15 +15,9 @@ const Sidebar: React.FC<SidebarProps> = ({
   selectedVideoId,
 }) => {
   return (
-    <div
-      className="w-80 bg-white dark:bg-gray-800 border-r border-gray-300 
-                    dark:border-gray-600 h-screen overflow-y-auto"
-    >
-      <div
-        className="p-4 border-b border-gray-300 dark:border-gray-600 
-                      bg-gray-50 dark:bg-gray-700"
-      >
-        <div className="flex items-center justify-between mb-2">
+    <div className="h-screen w-80 overflow-y-auto border-r border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800">
+      <div className="border-b border-gray-300 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700">
+        <div className="mb-2 flex items-center justify-between">
           <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100">
             Master Classes
           </h2>
@@ -34,7 +28,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         </p>
       </div>
 
-      <div className="p-4 space-y-2">
+      <div className="space-y-2 p-4">
         {masterClasses.map((masterClass) => (
           <Accordion
             key={masterClass.id}

@@ -1,5 +1,5 @@
-import React from "react";
-import type { MasterClass, Video } from "../types";
+import React from 'react';
+import type { MasterClass, Video } from '../types';
 
 interface AccordionProps {
   masterClass: MasterClass;
@@ -13,19 +13,8 @@ const Accordion: React.FC<AccordionProps> = ({
   selectedVideoId,
 }) => {
   return (
-    <details
-      className="group border border-gray-300 dark:border-gray-600 rounded-lg mb-2 
-                       bg-white dark:bg-gray-800"
-    >
-      <summary
-        className="w-full px-4 py-3 cursor-pointer bg-gray-50 dark:bg-gray-700 
-                          hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors 
-                          duration-200 rounded-t-lg flex justify-between items-center 
-                          focus:outline-none focus:ring-2 focus:ring-blue-500 
-                          group-open:border-b group-open:border-gray-300 
-                          group-open:dark:border-gray-600 list-none
-                          [&::-webkit-details-marker]:hidden"
-      >
+    <details className="group mb-2 rounded-lg border border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800">
+      <summary className="flex w-full cursor-pointer list-none items-center justify-between rounded-t-lg bg-gray-50 px-4 py-3 transition-colors duration-200 group-open:border-b group-open:border-gray-300 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:bg-gray-700 group-open:dark:border-gray-600 dark:hover:bg-gray-600 [&::-webkit-details-marker]:hidden">
         <div>
           <h3 className="font-semibold text-gray-800 dark:text-gray-100">
             {masterClass.name}
@@ -35,8 +24,7 @@ const Accordion: React.FC<AccordionProps> = ({
           </p>
         </div>
         <svg
-          className="w-5 h-5 transform transition-transform duration-200 
-                     text-gray-600 dark:text-gray-300 group-open:rotate-180"
+          className="h-5 w-5 transform text-gray-600 transition-transform duration-200 group-open:rotate-180 dark:text-gray-300"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -55,29 +43,22 @@ const Accordion: React.FC<AccordionProps> = ({
           <button
             key={video.id}
             onClick={() => onVideoSelect(video)}
-            className={`w-full px-4 py-3 text-left hover:bg-blue-50 
-                       dark:hover:bg-blue-900/20 transition-colors duration-200 
-                       border-b border-gray-200 dark:border-gray-600 
-                       last:border-b-0 last:rounded-b-lg focus:outline-none 
-                       focus:ring-2 focus:ring-blue-500 ${
-                         selectedVideoId === video.id
-                           ? "bg-blue-100 dark:bg-blue-900/30 border-l-4 border-l-blue-500"
-                           : ""
-                       }`}
+            className={`w-full border-b border-gray-200 px-4 py-3 text-left transition-colors duration-200 last:rounded-b-lg last:border-b-0 hover:bg-blue-50 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:hover:bg-blue-900/20 ${
+              selectedVideoId === video.id
+                ? 'border-l-4 border-l-blue-500 bg-blue-100 dark:bg-blue-900/30'
+                : ''
+            }`}
           >
-            <div className="flex justify-between items-start">
+            <div className="flex items-start justify-between">
               <div className="flex-1">
-                <h4 className="font-medium text-gray-800 dark:text-gray-100 mb-1">
+                <h4 className="mb-1 font-medium text-gray-800 dark:text-gray-100">
                   {video.title}
                 </h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
+                <p className="line-clamp-2 text-sm text-gray-600 dark:text-gray-300">
                   {video.description}
                 </p>
               </div>
-              <span
-                className="text-xs text-gray-500 dark:text-gray-400 
-                             ml-2 whitespace-nowrap"
-              >
+              <span className="ml-2 text-xs whitespace-nowrap text-gray-500 dark:text-gray-400">
                 {video.duration}
               </span>
             </div>

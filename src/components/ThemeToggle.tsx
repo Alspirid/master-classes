@@ -1,5 +1,5 @@
-import React from "react";
-import { useTheme } from "../hooks/useTheme";
+import React from 'react';
+import { useTheme } from '../hooks/useTheme';
 
 const ThemeToggle: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -7,15 +7,13 @@ const ThemeToggle: React.FC = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 
-                 dark:hover:bg-gray-600 transition-colors duration-200 
-                 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+      className="rounded-lg bg-gray-200 p-2 transition-colors duration-200 hover:bg-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600"
+      aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
-      {theme === "light" ? (
+      {theme === 'light' ? (
         // Moon icon for dark mode
         <svg
-          className="w-5 h-5 text-gray-700 dark:text-gray-300"
+          className="h-5 w-5 text-gray-700 dark:text-gray-300"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -30,7 +28,7 @@ const ThemeToggle: React.FC = () => {
       ) : (
         // Sun icon for light mode
         <svg
-          className="w-5 h-5 text-gray-700 dark:text-gray-300"
+          className="h-5 w-5 text-gray-700 dark:text-gray-300"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

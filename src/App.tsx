@@ -1,9 +1,9 @@
-import { useState } from "react";
-import MainContent from "./components/MainContent";
-import Sidebar from "./components/Sidebar";
-import { ThemeProvider } from "./contexts/ThemeContext";
-import { mockMasterClasses } from "./data/mockData";
-import type { Video } from "./types";
+import { useState } from 'react';
+import MainContent from './components/MainContent';
+import Sidebar from './components/Sidebar';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { mockMasterClasses } from './data/mockData';
+import type { Video } from './types';
 
 function App() {
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);

@@ -1,0 +1,6 @@
+# Ignore artifacts:
+dist
+node_modules
+*.log
+yarn.lock
+public/mockServiceWorker.js

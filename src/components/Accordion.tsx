@@ -14,7 +14,7 @@ const Accordion: React.FC<AccordionProps> = ({
 }) => {
   return (
     <details className="group mb-2 rounded-lg border border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800">
-      <summary className="flex w-full cursor-pointer list-none items-center justify-between rounded-t-lg bg-gray-50 px-4 py-3 transition-colors duration-200 group-open:border-b group-open:border-gray-300 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:bg-gray-700 group-open:dark:border-gray-600 dark:hover:bg-gray-600 [&::-webkit-details-marker]:hidden">
+      <summary className="flex w-full cursor-pointer list-none items-center justify-between rounded-t-lg bg-gray-50 p-2 px-4 py-3 transition-colors duration-200 group-open:border-b group-open:border-gray-300 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:bg-gray-700 group-open:dark:border-gray-600 dark:hover:bg-gray-600 [&::-webkit-details-marker]:hidden">
         <div>
           <h3 className="font-semibold text-gray-800 dark:text-gray-100">
             {masterClass.name}

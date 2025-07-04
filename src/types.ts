@@ -18,3 +18,5 @@ export type AppState = {
   masterClasses: MasterClass[];
   selectedVideo: Video | null;
 };
+
+export type Theme = 'light' | 'dark';

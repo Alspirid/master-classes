@@ -15,7 +15,7 @@ export default tseslint.config([
     files: ['**/*.{ts,tsx}'],
     extends: [
       js.configs.recommended,
-      tseslint.configs.recommended,
+      tseslint.configs.recommendedTypeChecked,
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
       prettier,
@@ -28,7 +28,7 @@ export default tseslint.config([
         ecmaFeatures: {
           jsx: true,
         },
-        project: './tsconfig.json',
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },

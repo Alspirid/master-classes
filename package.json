@@ -15,12 +15,12 @@
     "typecheck:watch": "tsc -b --noEmit --watch"
   },
   "dependencies": {
-    "eslint-config-prettier": "^10.1.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^10.1.5",
     "@eslint/js": "^9.29.0",
     "@tailwindcss/vite": "^4.1.11",
     "@types/react": "^19.1.8",
